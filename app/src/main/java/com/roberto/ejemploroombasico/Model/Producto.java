@@ -1,9 +1,12 @@
 package com.roberto.ejemploroombasico.Model;
 
 import androidx.room.Entity;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(indices = {@Index(name = "pdtounico",value = {"Nombre"},unique = true)})
 public class Producto {
+    @PrimaryKey(autoGenerate = true)
     private int Id;
     private String Nombre;
     private String Tipo;

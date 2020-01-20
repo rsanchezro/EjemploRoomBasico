@@ -1,11 +1,16 @@
 package com.roberto.ejemploroombasico.Model;
 
+
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity
+@Entity(foreignKeys ={ @ForeignKey(entity = Usuario.class,parentColumns = {"id"},childColumns = {"Id_user"},onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE),
+@ForeignKey(entity = Producto.class,parentColumns = {"Id"},childColumns = {"Id_producto"},onDelete = ForeignKey.CASCADE,onUpdate = ForeignKey.CASCADE)})
 public class Post {
+    @PrimaryKey(autoGenerate = true)
     private int Id;
     private Date fecha;
     private int Id_user;
@@ -52,3 +57,4 @@ public class Post {
         this.comentario = comentario;
     }
 }
+

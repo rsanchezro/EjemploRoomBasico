@@ -1,9 +1,10 @@
 package com.roberto.ejemploroombasico.Model;
 
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(indices = {@Index(name = "loginunico",value ={ "Login"},unique = true)})
 public class Usuario {
     @PrimaryKey(autoGenerate = true)
     private Integer id;
