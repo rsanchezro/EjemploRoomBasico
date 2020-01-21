@@ -17,6 +17,14 @@ public class Post {
     private int Id_producto;
     private String comentario;
 
+    public Post(Date fecha, int Id_user, int Id_producto, String comentario) {
+
+        this.fecha = fecha;
+        this.Id_user = Id_user;
+        this.Id_producto = Id_producto;
+        this.comentario = comentario;
+    }
+
     public int getId() {
         return Id;
     }

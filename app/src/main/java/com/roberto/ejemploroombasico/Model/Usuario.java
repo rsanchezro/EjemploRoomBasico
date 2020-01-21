@@ -7,14 +7,20 @@ import androidx.room.PrimaryKey;
 @Entity(indices = {@Index(name = "loginunico",value ={ "Login"},unique = true)})
 public class Usuario {
     @PrimaryKey(autoGenerate = true)
-    private Integer id;
+    private int id;
 
     private String Login;
     private String Password;
     private String email;
 
+    public Usuario(String Login, String Password, String email) {
+        this.Login = Login;
+        this.Password = Password;
+        this.email = email;
+    }
 
-    public Integer getId() {
+
+    public int getId() {
         return id;
     }
 

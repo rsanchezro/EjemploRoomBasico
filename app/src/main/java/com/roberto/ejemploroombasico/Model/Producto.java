@@ -12,6 +12,13 @@ public class Producto {
     private String Tipo;
     private String Descripcion;
 
+    public Producto(String Nombre, String Tipo, String Descripcion) {
+
+        this.Nombre = Nombre;
+        this.Tipo = Tipo;
+        this.Descripcion = Descripcion;
+    }
+
     public int getId() {
         return Id;
     }

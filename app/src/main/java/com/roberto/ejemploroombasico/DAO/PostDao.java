@@ -10,6 +10,7 @@ import androidx.room.Update;
 import com.roberto.ejemploroombasico.Model.Post;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Dao
 public interface PostDao {
@@ -36,10 +37,22 @@ public interface PostDao {
     //AHORA VAMOS CON LAS CONSULTAS
     //Listado de todos los POST
     @Query("SELECT * FROM Post")
-    public ArrayList<Post> listado_allPost();
+    public List<Post> listado_allPost();
     //Un post en concreto
     @Query("SELECT * FROM Post where Id= :Id_post")
     public Post buscar_Post(int Id_post);
+
+    //QUIERO TODOS LOS POSTS DE UN PRODUCTO
+    @Query("SELECT * FROM Post where Id_producto= :Id_pdto")
+    public Post[] listadopost_pdto(int Id_pdto);
+
+    //QUIERO TODOS LOS POSTS DE UN Usuario
+    @Query( "SELECT * FROM Post where Id_user= :usuario")
+    public List<Post> listadopost_usuario(int usuario);
+
+    //OBTENER TODOS LOS POSTS DE UN Usuario
+
+
 
 
 
